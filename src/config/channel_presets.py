@@ -543,3 +543,16 @@ class ChannelPresetManager:
         except Exception as e:
             console.print(f"[red]Failed to apply configuration: {e}[/red]")
             return False
+
+
+# Module-level helper functions for easier imports
+def get_all_presets():
+    """Get all available channel presets"""
+    manager = ChannelPresetManager()
+    return manager.CHANNEL_PRESETS
+
+
+def get_preset(preset_name):
+    """Get a specific preset by name"""
+    manager = ChannelPresetManager()
+    return manager.CHANNEL_PRESETS.get(preset_name)

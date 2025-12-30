@@ -464,3 +464,64 @@ class ModuleConfigurator:
 
         console.print("\n")
         console.print(table)
+
+
+# Module-level export for easier imports
+# Dictionary of available modules and their descriptions
+MODULES = {
+    'mqtt': {
+        'name': 'MQTT Module',
+        'description': 'Bridge mesh to internet via MQTT',
+        'configurable': True
+    },
+    'serial': {
+        'name': 'Serial Module',
+        'description': 'Serial communication settings',
+        'configurable': True
+    },
+    'external_notification': {
+        'name': 'External Notification',
+        'description': 'LED/buzzer control',
+        'configurable': True
+    },
+    'store_forward': {
+        'name': 'Store & Forward',
+        'description': 'Message caching for offline nodes',
+        'configurable': True
+    },
+    'range_test': {
+        'name': 'Range Test',
+        'description': 'Network range testing',
+        'configurable': True
+    },
+    'telemetry': {
+        'name': 'Telemetry',
+        'description': 'Device and environment monitoring',
+        'configurable': True
+    },
+    'canned_messages': {
+        'name': 'Canned Messages',
+        'description': 'Quick message templates',
+        'configurable': True
+    },
+    'audio': {
+        'name': 'Audio',
+        'description': 'Voice communication',
+        'configurable': True
+    },
+    'remote_hardware': {
+        'name': 'Remote Hardware',
+        'description': 'GPIO control over mesh',
+        'configurable': True
+    },
+    'neighbor_info': {
+        'name': 'Neighbor Info',
+        'description': 'Network topology information',
+        'configurable': True
+    },
+    'detection_sensor': {
+        'name': 'Detection Sensor',
+        'description': 'GPIO sensor integration',
+        'configurable': True
+    }
+}

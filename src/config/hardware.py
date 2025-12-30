@@ -226,11 +226,10 @@ class HardwareDetector:
         """Detect USB LoRa modules"""
         log("Detecting USB LoRa modules")
 
+        usb_devices = []
         result = run_command('lsusb')
 
         if result['success']:
-            usb_devices = []
-
             for line in result['stdout'].split('\n'):
                 for vendor_product, device_info in self.KNOWN_USB_MODULES.items():
                     vendor, product = vendor_product.split(':')
@@ -265,6 +264,9 @@ class HardwareDetector:
 
         if usb_serial_devices:
             self.detected_hardware['usb_serial_ports'] = usb_serial_devices
+
+        # Return list of detected USB modules
+        return usb_devices
 
     def detect_spi_modules(self):
         """Detect SPI LoRa modules"""
@@ -412,3 +414,16 @@ class HardwareDetector:
             table.add_row(hw_type, details_str)
 
         console.print(table)
+
+
+# Module-level helper functions for easier imports
+def get_available_hats():
+    """Get dictionary of available HAT configurations"""
+    detector = HardwareDetector()
+    return detector.KNOWN_SPI_HATS
+
+
+def detect_usb_devices():
+    """Detect USB LoRa devices"""
+    detector = HardwareDetector()
+    return detector.detect_usb_modules()

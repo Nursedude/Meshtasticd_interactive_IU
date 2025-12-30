@@ -665,3 +665,11 @@ class LoRaConfigurator:
         console.print(table)
 
         return channels
+
+
+# Module-level exports for easier imports
+REGIONS = LoRaConfigurator.REGIONS
+MODEM_PRESETS = LoRaConfigurator.MODEM_PRESETS
+BANDWIDTHS = LoRaConfigurator.BANDWIDTHS
+SPREADING_FACTORS = LoRaConfigurator.SPREADING_FACTORS
+CODING_RATES = LoRaConfigurator.CODING_RATES

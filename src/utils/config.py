@@ -53,6 +53,12 @@ DEBUG_MODE = os.getenv('DEBUG_MODE', 'false').lower() == 'true'
 INSTALLER_LOG_PATH = os.getenv('INSTALLER_LOG_PATH', '/var/log/meshtasticd-installer.log')
 SKIP_HARDWARE_DETECTION = os.getenv('SKIP_HARDWARE_DETECTION', 'false').lower() == 'true'
 
+# UI Configuration
+ENABLE_EMOJI = os.getenv('ENABLE_EMOJI', 'false').lower() in ('true', 'yes', '1')
+
 # Directory paths
 TEMPLATES_DIR = Path(__file__).parent.parent.parent / 'templates'
 SCRIPTS_DIR = Path(__file__).parent.parent.parent / 'scripts'
+
+# Backward compatibility alias
+MESHTASTICD_CONFIG_PATH = CONFIG_PATH
