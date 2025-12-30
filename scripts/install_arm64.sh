@@ -101,6 +101,11 @@ echo -e "\n${CYAN}Checking for packaging conflicts...${NC}"
 if dpkg -l | grep -q python3-packaging; then
     echo -e "${YELLOW}Detected python3-packaging (Debian package) - removing to prevent conflicts${NC}"
     apt-get remove --purge python3-packaging -y || true
+
+    # Reinstall pip if it was removed as a dependency
+    echo -e "${CYAN}Ensuring pip is installed...${NC}"
+    apt-get install -y python3-pip || python3 -m ensurepip --upgrade || true
+
     echo -e "${GREEN}Installing packaging via pip${NC}"
     python3 -m pip install --upgrade --force-reinstall packaging --break-system-packages || true
 fi
