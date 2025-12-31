@@ -1,11 +1,36 @@
 """Version information for Meshtasticd Interactive Installer"""
 
-__version__ = "3.0.2"
-__version_info__ = (3, 0, 2)
+__version__ = "3.0.4"
+__version_info__ = (3, 0, 4)
 __release_date__ = "2025-12-31"
 
 # Version history
 VERSION_HISTORY = [
+    {
+        "version": "3.0.4",
+        "date": "2025-12-31",
+        "changes": [
+            "NEW: Uninstaller - Remove meshtasticd and components interactively",
+            "NEW: Progress indicator utilities for installations",
+            "NEW: Launcher saves UI preference with auto-launch option",
+            "NEW: Use --wizard flag to force wizard and reset preference",
+            "IMPROVED: Edit existing channels with pre-filled values",
+            "IMPROVED: Consistent 'm' = Main Menu across all prompts",
+            "IMPROVED: Better emoji detection for SSH and RPi terminals"
+        ]
+    },
+    {
+        "version": "3.0.3",
+        "date": "2025-12-31",
+        "changes": [
+            "NEW: Edit existing channels with pre-filled values",
+            "IMPROVED: Consistent 'm' = Main Menu across all prompts",
+            "IMPROVED: Better emoji detection for SSH and RPi terminals",
+            "IMPROVED: Region selection now has back/menu options",
+            "IMPROVED: Channel edit shows current values as defaults",
+            "FIX: Back navigation works in all channel config steps"
+        ]
+    },
     {
         "version": "3.0.2",
         "date": "2025-12-31",
